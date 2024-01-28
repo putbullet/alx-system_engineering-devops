@@ -33,5 +33,4 @@ dirs_containing_files_with_extension
 files_starting_with_a_number
 print_nth_line
 reverse_readme
-![1F42E](https://github.com/putbullet/alx-system_engineering-devops/assets/68425807/e787b659-6391-4d47-9162-35d4c09b0a55)
 
