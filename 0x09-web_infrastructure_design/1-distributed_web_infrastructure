@@ -1,1 +1,54 @@
 https://imgur.com/HwbbkTe
+
+Infrastructure Overview:
+
+    Server 1 (Web Server):
+        Hosting Nginx to handle HTTP requests from clients and serve static content.
+        Distributes incoming requests to the application servers.
+
+    Server 2 (Application Server):
+        Executes application logic and generates dynamic content.
+        Stores and serves the application files (code base).
+
+    Server 3 (Database):
+        MySQL database server responsible for storing and managing structured data.
+
+    Load Balancer (HAProxy):
+        Distributes incoming traffic across multiple servers to ensure high availability and scalability.
+        Acts as a single entry point for clients, routing requests to the appropriate server based on defined rules.
+
+Specifics:
+Additional Elements and Their Purposes:
+
+    Load Balancer (HAProxy): Added to distribute incoming traffic among multiple servers, improving performance, scalability, and reliability.
+    Additional Server (Application Server): Added to separate the application logic from the web server for better scalability and maintainability.
+
+Load Balancer Configuration:
+
+    HAProxy is configured with a round-robin distribution algorithm, which evenly distributes incoming requests across the available servers. This ensures a balanced load distribution.
+
+Load Balancer Setup:
+
+    The load balancer is configured for an Active-Active setup, where all servers are actively handling incoming requests simultaneously. In this setup, traffic is evenly distributed among all servers to maximize performance and availability.
+
+Database Primary-Replica (Master-Slave) Cluster:
+
+    In a Primary-Replica cluster, the Primary (Master) node handles write operations and synchronously replicates data changes to the Replica (Slave) nodes.
+    Replica nodes serve as hot standbys and handle read-only operations. They asynchronously replicate data from the Primary node to ensure data redundancy and fault tolerance.
+
+Difference between Primary and Replica Nodes:
+
+    Primary Node: Handles write operations and serves as the authoritative source of data. It is responsible for maintaining data consistency and durability.
+    Replica Node: Serves as a read-only copy of the data. It provides scalability for read-heavy workloads and acts as a failover mechanism in case the Primary node fails.
+
+Issues with the Infrastructure:
+
+    Single Point of Failure (SPOF):
+        The infrastructure still has single points of failure, such as the load balancer and database server. If any of these components fail, it can lead to downtime or degraded performance.
+
+    Security Issues:
+        Lack of firewall configurations exposes servers to potential security threats and unauthorized access.
+        Absence of HTTPS encryption leaves data transmitted between clients and servers vulnerable to interception and manipulation.
+
+    No Monitoring:
+        Without monitoring tools and processes in place, it's challenging to detect and address performance issues, security breaches, or resource bottlenecks proactively. Monitoring is essential for maintaining the health and performance of the infrastructure.

@@ -1,1 +1,37 @@
+**Link**
 https://imgur.com/a/8qkViqF
+
+**Explination**
+1. Server:
+
+A server is a physical or virtual machine that provides resources, data, services, or programs to other computers or clients over a network. In this infrastructure, we have one server responsible for hosting the entire web application.
+2. Domain Name:
+
+A domain name, such as foobar.com, serves as a human-readable label for identifying a website on the internet. It's associated with an IP address (in this case, 8.8.8.8) through DNS (Domain Name System) records.
+3. DNS Record:
+
+The "www" in www.foobar.com is a subdomain and is typically associated with a CNAME (Canonical Name) record in the DNS, pointing to the main domain (foobar.com) or directly to the server's IP address.
+4. Web Server (Nginx):
+
+The web server (in this case, Nginx) handles HTTP requests from clients (users' web browsers) and serves web pages or static content. It plays a crucial role in delivering content efficiently and securely to users.
+5. Application Server:
+
+The application server executes the application logic and generates dynamic content requested by users. It communicates with the web server to process requests, retrieve data from the database, and construct responses to be sent back to clients.
+6. Application Files (Code Base):
+
+These are the files containing the source code of the web application. They include HTML, CSS, JavaScript, server-side scripts (e.g., PHP, Python, Ruby), and other assets required to render web pages and provide functionality.
+7. Database (MySQL):
+
+The database (MySQL in this case) stores and manages structured data used by the web application. It's responsible for handling data storage, retrieval, and manipulation, ensuring data integrity, and supporting efficient querying.
+Communication with User's Computer:
+
+When a user requests the website www.foobar.com, their computer sends an HTTP request over the internet to the server's IP address (8.8.8.8). The request is received by the web server (Nginx), which then forwards dynamic requests to the application server for processing. The application server interacts with the database (MySQL) if necessary and generates an appropriate response, which is then sent back to the user's computer via the web server.
+Issues with the Infrastructure:
+
+    Single Point of Failure (SPOF): Since all components are hosted on a single server, any failure in hardware or software can lead to downtime for the entire website.
+
+    Downtime during Maintenance: Performing maintenance tasks, such as deploying new code or restarting the web server, requires bringing down the entire website, resulting in downtime for users.
+
+    Limited Scalability: The infrastructure may struggle to handle high volumes of incoming traffic as it's not easily scalable. Adding more resources or scaling horizontally requires significant changes and may not be feasible without impacting performance and availability.
+
+Improving the infrastructure to address these issues could involve implementing redundancy, load balancing, and scalability measures, such as using multiple servers, distributed systems, and cloud services.

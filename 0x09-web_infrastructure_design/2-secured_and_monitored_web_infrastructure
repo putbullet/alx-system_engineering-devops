@@ -1,1 +1,53 @@
 https://i.imgur.com/t33iKQB.jpg
+
+Infrastructure Overview:
+
+    Server 1 (Load Balancer):
+        Terminates SSL connections and routes traffic to the appropriate servers.
+        Hosts SSL certificate for serving www.foobar.com over HTTPS.
+
+    Server 2 (Web Server):
+        Hosts Nginx to handle HTTP/HTTPS requests.
+        Provides web content and serves as an entry point for client requests.
+
+    Server 3 (Application Server):
+        Executes application logic and generates dynamic content.
+        Stores and serves the application files (code base).
+
+Specifics:
+Additional Elements and Their Purposes:
+
+    Firewalls (3): Added for network security to control and monitor incoming and outgoing traffic, protecting servers from unauthorized access and potential threats.
+    SSL Certificate: Installed on the load balancer to encrypt traffic between clients and servers, ensuring data confidentiality and integrity.
+    Monitoring Clients (3): Deployed to collect and send server performance metrics, logs, and other relevant data to the monitoring tool (e.g., Sumo Logic) for analysis and visualization.
+
+Firewalls:
+
+    Firewalls are used to control and monitor incoming and outgoing traffic based on predefined security rules. They act as barriers between internal network resources and external networks (e.g., the internet), protecting servers from unauthorized access, malicious attacks, and potential threats.
+
+HTTPS Traffic:
+
+    Traffic is served over HTTPS to encrypt data transmitted between clients and servers, preventing unauthorized interception and manipulation of sensitive information (e.g., passwords, credit card details). HTTPS ensures data confidentiality, integrity, and authenticity, enhancing overall security.
+
+Monitoring:
+
+    Monitoring is used to track and analyze various aspects of server performance, resource utilization, network activity, security events, and application behavior. It helps identify and troubleshoot issues, optimize performance, and ensure the reliability and availability of the infrastructure.
+
+Monitoring Data Collection:
+
+    Monitoring clients (e.g., agents or data collectors) are deployed on each server to gather performance metrics, logs, and other relevant data. They continuously collect and send this data to the monitoring tool, where it's aggregated, analyzed, and visualized to provide insights into the health and performance of the infrastructure.
+
+Monitoring Web Server QPS:
+
+    To monitor web server QPS (Queries Per Second), you can configure the monitoring tool to track and analyze HTTP/HTTPS request metrics, such as request rate, response time, and error rate. This data helps evaluate server performance, identify traffic patterns, and optimize resource allocation.
+
+Issues with the Infrastructure:
+
+    Terminating SSL at the Load Balancer Level:
+        Terminating SSL at the load balancer exposes decrypted traffic within the internal network, potentially compromising data confidentiality. It's recommended to use end-to-end encryption to secure data throughout its entire transmission path.
+
+    Single MySQL Server Accepting Writes:
+        Having only one MySQL server capable of accepting writes creates a single point of failure for write operations. If this server fails, it can lead to data loss or service downtime. Implementing replication and failover mechanisms can help mitigate this risk.
+
+    Servers with Same Components (Database, Web Server, Application Server):
+        Having identical components across servers increases homogeneity but also introduces a single point of failure for each component type. If a critical component fails on one server, it may affect the entire application. Implementing redundancy and distributing components across multiple servers can improve fault tolerance and availability.
