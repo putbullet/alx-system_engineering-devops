@@ -13,7 +13,7 @@ In all versions of SSH it is important to verify unknown public keys, i.e. assoc
 
 
 
-in this task the goal is to get a general ideas of :
+in this task the goal is to get a general idea of :
 
 
 -What is a server
