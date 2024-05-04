@@ -21,10 +21,9 @@ For the containers that you are given in this project as well as the checker, ev
 
 | Filename |
 | ------ |
-| [0-iamsomeonelese](https://github.com/edward0rtiz/holberton-system_engineering-devops/blob/master/0x12-web_stack_debugging_2/0-iamsomeonelese)|
-| [1-run_nginx_as_nginx](https://github.com/edward0rtiz/holberton-system_engineering-devops/blob/master/0x12-web_stack_debugging_2/1-run_nginx_as_nginx)|
-| [100-fix_in_7_lines_or_less](https://github.com/edward0rtiz/holberton-system_engineering-devops/blob/master/0x12-web_stack_debugging_2/100-fix_in_7_lines_or_less)|
-
+| [0-iamsomeonelese](https://github.com/putbullet/alx-system_engineering-devops/blob/master/0x12-web_stack_debugging_2/0-iamsomeonelese)|
+| [1-run_nginx_as_nginx](https://github.com/putbullet/alx-system_engineering-devops/blob/master/0x12-web_stack_debugging_2/1-run_nginx_as_nginx)|
+| [100-fix_in_7_lines_or_less](https://github.com/putbullet/alx-system_engineering-devops/blob/master/0x12-web_stack_debugging_2/100-fix_in_7_lines_or_less)|
 
 ## Additional info :construction:
 ### Resources
@@ -35,7 +34,7 @@ For the containers that you are given in this project as well as the checker, ev
 
 ### Try It On Your Machine :computer:
 ```bash
-git clone https://github.com/edward0rtiz/holberton-system_engineering-devops.git
+git clone https://github.com/putubllet/alx-system_engineering-devops.git
 cd 0x12-web_stack_debugging_2
 cat FILENAME
 ./0-iamsomeonelese www-data
